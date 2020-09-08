@@ -1,5 +1,6 @@
 package com.ph.service.impl;
 
+import com.ph.aspect.LogAspect;
 import com.ph.service.BuyService;
 import org.springframework.stereotype.Component;
 
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Component;
  **/
 @Component("buyService")
 public class BuyServiceImpl implements BuyService {
+    LogAspect logAspect;
 
     @Override
     public String buy(String userId,String productName) {

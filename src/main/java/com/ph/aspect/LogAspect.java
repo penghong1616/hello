@@ -1,5 +1,6 @@
 package com.ph.aspect;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -22,7 +23,12 @@ public class LogAspect {
      * @return: void
      **/
     @Before("execution(* com.ph.service.impl.BuyServiceImpl.buy(..))")
-    public void buyBefore(){
+    public void buyBefore(JoinPoint joinPoint){
+        System.out.println("joinPoint---"+joinPoint.toString());
+        Object[]args=joinPoint.getArgs();
+        for (Object obj:args){
+            System.out.println(obj);
+        }
         System.out.println("用户开始购买");
     }
     @After("execution(* com.ph.service.impl.BuyServiceImpl.buy(..))")
