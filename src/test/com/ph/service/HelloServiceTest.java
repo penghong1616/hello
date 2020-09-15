@@ -1,6 +1,6 @@
-package com.ph.aop;
+package com.ph.service;
 
-import com.ph.service.BuyService;
+import com.ph.pojo.User;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -8,14 +8,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 /**
  * @Description
  * @Author penghong
- * Date 2020/8/25 11:15
+ * Date 2020/9/10 16:10
  **/
-public class LogTest {
+public class HelloServiceTest {
     @Test
-    public void logBuy(){
+    public void say(){
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
-        BuyService buyService=context.getBean("buyService",BuyService.class);
-        buyService.buy("ph1616","城南旧事");;
+        Object object=context.getBean("helloFactoryBean");
+        System.out.println(object.toString());
     }
 }

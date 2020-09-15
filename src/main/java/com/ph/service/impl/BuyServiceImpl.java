@@ -15,9 +15,6 @@ public class BuyServiceImpl implements BuyService {
 
     @Override
     public String buy(String userId,String productName) {
-        System.out.println(
-                userId+"买----"+productName
-        );
         return userId+"买----"+productName;
     }
 }
